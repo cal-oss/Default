@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software in your work, please cite it using the metadata below."
+type: software
+title: "Claude Ads"
+abstract: >
+  Multi-host paid advertising audit and optimization skill conforming to the
+  Agent Skills open standard. Verified on Claude Code; experimental on OpenAI
+  Codex CLI, Cursor, Windsurf, Gemini CLI, and Goose. Covers Google Ads
+  (including AI Max), Meta Ads (including Andromeda + GEM + Lattice with
+  Entity-ID clustering prediction), YouTube Ads, LinkedIn Ads, TikTok Ads,
+  Microsoft Ads, Apple Ads, and Amazon Ads with 250+ audit checks, 22
+  sub-skills, 10 parallel agents, 12 industry templates, cross-platform
+  attribution and server-side tracking deep dives, PPC math, A/B test design,
+  PDF report generation, and a 41-test pytest eval harness.
+authors:
+  - alias: AgriciDaniel
+    name-particle: ""
+repository-code: "https://github.com/AI-Marketing-Hub/claude-ads"
+url: "https://github.com/AI-Marketing-Hub/claude-ads"
+license: MIT
+version: "1.7.0"
+date-released: "2026-05-17"
+keywords:
+  - paid advertising
+  - google ads
+  - meta ads
+  - amazon ads
+  - apple ads
+  - tiktok ads
+  - linkedin ads
+  - microsoft ads
+  - youtube ads
+  - ppc
+  - advertising audit
+  - retail media
+  - attribution
+  - server-side tracking
+  - agent skills
+  - claude code
+  - codex cli
+  - llm tool
