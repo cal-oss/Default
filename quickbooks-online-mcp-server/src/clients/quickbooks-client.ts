@@ -155,9 +155,7 @@ class QuickbooksClient {
         }
       });
 
-      // Start server — bind to all interfaces (IPv4 + IPv6) so ngrok can reach it
-      // regardless of whether it resolves `localhost` to 127.0.0.1 or ::1
-      server.listen(port, '::', async () => {
+      server.listen(port, '0.0.0.0', async () => {
         const addr = server.address();
         console.log(`[auth-server] Listening on ${typeof addr === 'string' ? addr : `${addr?.address}:${addr?.port}`} (family: ${typeof addr === 'object' ? addr?.family : 'n/a'})`);
 
