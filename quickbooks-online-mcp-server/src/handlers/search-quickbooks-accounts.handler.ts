@@ -5,7 +5,7 @@ import { buildQuickbooksSearchCriteria, QuickbooksSearchCriteriaInput } from "..
 
 export type AccountSearchCriteria = QuickbooksSearchCriteriaInput;
 
-export async function searchQuickbooksAccounts(criteria: AccountSearchCriteria): Promise<ToolResponse<any[]>> {
+export async function searchQuickbooksAccounts(criteria: AccountSearchCriteria = {}): Promise<ToolResponse<any[]>> {
   try {
     await quickbooksClient.authenticate();
     const quickbooks = quickbooksClient.getQuickbooks();
@@ -17,11 +17,18 @@ export async function searchQuickbooksAccounts(criteria: AccountSearchCriteria):
         if (err) {
           resolve({ result: null, isError: true, error: formatError(err) });
         } else {
-          resolve({ result: accounts.QueryResponse.Account || [], isError: false, error: null });
+          resolve({
+            result:
+              accounts?.QueryResponse?.Account ??
+              accounts?.QueryResponse?.totalCount ??
+              [],
+            isError: false,
+            error: null,
+          });
         }
       });
     });
   } catch (error) {
     return { result: null, isError: true, error: formatError(error) };
   }
-} 
+}
